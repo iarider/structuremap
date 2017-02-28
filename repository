@@ -1,0 +1,30 @@
+public class CompanyStatsUSRepo: ICompanyStats<T>
+{
+    private readonly StatisticsEntities _statContext;
+
+    public CompanyStatsUSRepo(StatisticsEntities statisticsContext)
+    {
+        _statisticsContext = statisticsContext;
+    }
+
+    public IEnumerable<USStats_Select> GetCompanyStats(DateTime? date, int? stats, string statFormat)
+    {
+        //business logic
+    }
+}
+
+public class CompanyStatsCityRepo: ICompanyStats<T>
+{
+    private readonly StatisticsEntities _statContext;
+
+    public CompanyStatsCityRepo(StatisticsEntities statisticsContext)
+    {
+        _statisticsContext = statisticsContext;
+    }
+
+    public IEnumerable<CityStats_Select> GetCompanyStats(DateTime? date, int? stats, string statFormat)
+    {
+        //business logic
+    }
+}
+
