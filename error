@@ -1,37 +1,10 @@
-I am getting this error from the IoC class when running my code:
+I am getting this error from the DoGetInstance method from StructureMapDependencyScope.cs
 
-Specified argument was out of the range of valid values.
-Parameter name: instance 'CompanyStatsRepo<T>' with ReturnType CompanyStatsRepo<T> cannot be cast to ICompanyStats<T>
+No default Instance is registered and cannot be automatically determined for type 'ICompanyStats<T>'
 
-Interface:
+There is no configuration specified for ICompanyStats<T>
 
-public interface ICompanyStats<T>
-    {
-        IEnumerable<T> GetCompanyStats(DateTime? date,
-                 int? stats, string statFormat);
-    }
-
-
-Derived class:
-}
-
-public class CompanyStatsRepo<T> where T: ICompanyStats<T>
-    {
-	//Injection code and business logic 
-    }
-
-Registry:
-
-public DefaultRegistry() {
-
-
-            For(typeof(ICompanyStats<>)).Use(typeof(CompanyStatsRepo<>));
-            var container = new Container(x =>
-            {
-                x.Scan(scan =>
-                {
-                    scan.TheCallingAssembly();
-                    scan.ConnectImplementationsToTypesClosing(typeof(ICompanyStats<>));
-                });
-            });
-       }
+1.) new PopStatController(*Default of ICompanyStats<T>*)
+2.) Stats.Services.Controllers.PopStatController
+3.) Instance of Stats.Services.Controllers.PopStatController
+4.) Container.GetInstance(Stats.Services.Controllers.PopStatController)
