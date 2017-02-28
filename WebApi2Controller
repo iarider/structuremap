@@ -1,0 +1,13 @@
+public class PopStatController : ApiController
+    {
+        private readonly ICompanyStats<T> _repo;
+
+        public PopStatController(ICompanyStats<T> repo)
+        {
+            _repo = repo;
+        }
+
+        public IEnumerable<USStats_Select> GetUSStats(string aoi, DateTime date, int? statisticsType, int dx)
+        {
+            return = _repo.GetCompanyStats(DateTime? date, int? stats, string statFormat.AsEnumerable();
+        }
