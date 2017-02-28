@@ -1,0 +1,15 @@
+public DefaultRegistry() 
+{
+  //default concrete implementation
+  For(typeof(ICompanyStats<>)).Use(typeof(CompanyStatsUSRepo));
+
+  var container = new Container(x =>
+  {
+      x.Scan(scan =>
+      {
+          scan.TheCallingAssembly();
+          scan.ConnectImplementationsToTypesClosing(typeof(ICompanyStats<>));
+      });
+
+  });
+}
