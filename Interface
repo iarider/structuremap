@@ -1,0 +1,5 @@
+public interface ICompanyStats<T>
+    {
+        IEnumerable<T> GetCompanyStats(DateTime? date,
+                 int? stats, string statFormat);
+    }
