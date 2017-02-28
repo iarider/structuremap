@@ -7,7 +7,7 @@ public class PopStatController : ApiController
             _repo = repo;
         }
 
-        public IEnumerable<USStats_Select> GetUSStats(string aoi, DateTime date, int? statisticsType, int dx)
+        public IEnumerable<USStats_Select> GetUSStats(string statFormat, DateTime date, int? stats)
         {
-            return = _repo.GetCompanyStats(DateTime? date, int? stats, string statFormat.AsEnumerable();
+            return = _repo.GetCompanyStats(DateTime? date, int? stats, string statFormat).AsEnumerable();
         }
