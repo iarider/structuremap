@@ -9,5 +9,11 @@ public class PopStatController : ApiController
 
         public IEnumerable<USStats_Select> GetUSStats(string statFormat, DateTime date, int? stats)
         {
-            return = _repo.GetCompanyStats(DateTime? date, int? stats, string statFormat).AsEnumerable();
+            return _repo.GetCompanyStats(DateTime? date, int? stats, string statFormat).AsEnumerable();
         }
+        
+        public IEnumerable<CityStats_Select> GetCityStats(string statFormat, DateTime date, int? stats)
+        {
+            return _repo.GetCompanyStats(DateTime? date, int? stats, string statFormat).AsEnumerable();
+        }
+     }
